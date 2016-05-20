@@ -88,26 +88,18 @@
 	"buffers":
 	[
 		{
-			"file": "Makefile",
-			"settings":
-			{
-				"buffer_size": 867,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "src/main.cpp",
 			"settings":
 			{
-				"buffer_size": 371,
+				"buffer_size": 437,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Conversion.cpp",
+			"file": "CMakeLists.txt",
 			"settings":
 			{
-				"buffer_size": 24,
+				"buffer_size": 238,
 				"line_ending": "Unix"
 			}
 		},
@@ -115,15 +107,18 @@
 			"file": "inc/Conversion.h",
 			"settings":
 			{
-				"buffer_size": 195,
+				"buffer_size": 168,
 				"line_ending": "Unix"
 			}
 		},
 		{
+			"contents": "#ifndef ICONVERSION_H_\n#define ICONVERSION_H_\n\nclass  IConversion {\n\n};\n\n#endif  // ICONVERSION_H_",
 			"file": "inc/IConversion.h",
+			"file_size": 98,
+			"file_write_time": 131082356464194670,
 			"settings":
 			{
-				"buffer_size": 113,
+				"buffer_size": 98,
 				"line_ending": "Unix"
 			}
 		}
@@ -135,7 +130,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 264.0,
+		"height": 201.0,
 		"last_filter": "git pus",
 		"selected_items":
 		[
@@ -246,10 +241,15 @@
 	],
 	"file_history":
 	[
+		"/home/kkuczaj/PAMSI-projekt/prj/Makefile",
+		"/home/kkuczaj/PAMSI-projekt/prj/inc/test.cpp",
+		"/home/kkuczaj/PAMSI-projekt/prj/inc/CImg.h",
+		"/home/kkuczaj/PAMSI-projekt/prj/src/CImg.cpp",
+		"/home/kkuczaj/PAMSI-projekt/prj/src/Conversion.cpp",
+		"/home/kkuczaj/PAMSI-projekt/prj/inc/bitmap_image.hpp",
 		"/home/kkuczaj/PAMSI-projekt/prj/inc/IReadBMP.h",
 		"/home/kkuczaj/PAMSI-projekt/prj/inc/ReadBMP.h",
 		"/home/kkuczaj/PAMSI-projekt/prj/PAMSI-projekt.sublime-project",
-		"/home/kkuczaj/PAMSI-projekt/prj/inc/bitmap_image.hpp",
 		"/home/kkuczaj/.config/sublime-text-3/Packages/User/C++.sublime-settings",
 		"/home/kkuczaj/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
 		"/home/kkuczaj/PAMSI-projekt/prj/src/bitmap_image.cpp",
@@ -317,6 +317,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"bitmap_image",
 			"ReadBMP",
 			"IREAD_BMP_H",
 			"READ_BMP_H",
@@ -383,29 +384,30 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Makefile",
+					"file": "src/main.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 867,
+						"buffer_size": 437,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								146,
-								146
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -416,25 +418,24 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/main.cpp",
+					"file": "CMakeLists.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 371,
+						"buffer_size": 238,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								20,
-								20
+								236,
+								236
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -442,28 +443,33 @@
 					},
 					"stack_index": 2,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
 				{
 					"buffer": 2,
-					"file": "src/Conversion.cpp",
+					"file": "inc/Conversion.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 24,
+						"buffer_size": 168,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								24,
-								24
+								116,
+								116
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -471,28 +477,22 @@
 					},
 					"stack_index": 1,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 3,
-					"file": "inc/Conversion.h",
+					"file": "inc/IConversion.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 195,
+						"buffer_size": 98,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								166,
-								166
+								68,
+								68
 							]
 						],
 						"settings":
@@ -504,34 +504,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "inc/IConversion.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 113,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								65,
-								65
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
 					"type": "text"
 				}
 			]

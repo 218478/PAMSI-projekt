@@ -5,7 +5,7 @@
 
 #include <string>
 
-class Conversion : public IConversion {
+class Conversion : private IConversion {
 public:
 
 };
