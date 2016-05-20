@@ -1,0 +1,100 @@
+#Artur Czekalski
+artur01.bmp
+artur02.bmp
+artur03.bmp
+artur04.bmp
+artur05.bmp
+artur06.bmp
+artur07.bmp
+artur08.bmp
+artur09.bmp
+artur10.bmp
+artur11.bmp
+artur12.bmp
+artur13.bmp
+artur14.bmp
+artur20.bmp
+#Józef Kowalski
+jozef01.bmp
+jozef02.bmp
+jozef03.bmp
+#Tomasz Frontczak
+tomasz01.bmp
+tomasz02.bmp
+tomasz03.bmp
+#Mariusz Kazimierczak
+kazimierczak01.bmp
+kazimierczak02.bmp
+kazimierczak03.bmp
+kazimierczak04.bmp
+kazimierczak05.bmp
+kazimierczak06.bmp
+kazimierczak07.bmp
+#Andrzej Janota
+AndrzejJanota01.bmp
+AndrzejJanota02.bmp
+AndrzejJanota03.bmp
+AndrzejJanota04.bmp
+AndrzejJanota05.bmp
+AndrzejJanota06.bmp
+AndrzejJanota10.bmp
+AndrzejJanota12.bmp
+#Dominik Rodak
+DominikRodak01.bmp
+DominikRodak02.bmp
+DominikRodak03.bmp
+DominikRodak04.bmp
+DominikRodak05.bmp
+DominikRodak06.bmp
+DominikRodak07.bmp
+DominikRodak12.bmp
+#Jan Czech
+JanCzech01.bmp
+JanCzech02.bmp
+JanCzech03.bmp
+JanCzech04.bmp
+JanCzech05.bmp
+JanCzech06.bmp
+JanCzech07.bmp
+JanCzech08.bmp
+JanCzech09.bmp
+JanCzech10.bmp
+#Jan Kowalski
+JanKowalski01.bmp
+JanKowalski02.bmp
+JanKowalski03.bmp
+JanKowalski04.bmp
+JanKowalski05.bmp
+JanKowalski09.bmp
+#Jaros³aw Janicki
+Jaros³awJanicki01.bmp
+Jaros³awJanicki02.bmp
+Jaros³awJanicki03.bmp
+Jaros³awJanicki04.bmp
+Jaros³awJanicki05.bmp
+#Lucyna Wro¿yna
+LucynaWro¿yna01.bmp
+LucynaWro¿yna02.bmp
+LucynaWro¿yna03.bmp
+LucynaWro¿yna04.bmp
+LucynaWro¿yna08.bmp
+#Roman Pacula
+RomanPacula01.bmp
+RomanPacula02.bmp
+RomanPacula03.bmp
+RomanPacula04.bmp
+RomanPacula05.bmp
+RomanPacula06.bmp
+RomanPacula11.bmp
+#Sebastian Rodak
+SebastianRodak01.bmp
+SebastianRodak02.bmp
+SebastianRodak03.bmp
+SebastianRodak04.bmp
+SebastianRodak05.bmp
+SebastianRodak07.bmp
+SebastianRodak08.bmp
+#Franckey
+franek01.bmp
+franek02.bmp
+franek03.bmp

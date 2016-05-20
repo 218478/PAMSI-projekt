@@ -1,9 +1,9 @@
 CXXFLAGS = -Iinc -Wall -pedantic -g -std=c++11
 CC = g++
 
-SOURCES = src/main.cpp
+SOURCES = src/main.cpp src/Conversion.cpp src/bitmap_image.cpp
 
-HEADERS = 
+HEADERS = inc/IConversion.h inc/Conversion.h inc/bitmap_image.hpp
 
 OBJECTS = $(subst src/,obj/,$(subst .cpp,.o,$(SOURCES)))
 EXECUTABLE = program
