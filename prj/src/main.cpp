@@ -1,19 +1,26 @@
 #include "Conversion.h"
-#include "bitmap_image.hpp"
 
 #include <iostream>
 #include <string>
+// #include <boost/gil/gil_all.hpp>
+// using namespace boost::gil;
+
+#include "opencv2/opencv.hpp"
+
+using namespace cv;
 
 int main() {
-	std::cout << "\n\tPoprawna kompilacja\n" << std::endl;
-	// ReadBMP object;
-	// std::string name("jakas_nazwa.bmp");
-	// object.ReadImage(name);
+	Mat image;
+	image = imread( "panda.bmp", 1 );
 
+	if ( !image.data ) {
+		std::cerr << "No image data" << std::endl;
+		return -1;
+	}
+	namedWindow("Display Image", WINDOW_AUTOSIZE );
+	imshow("Display Image", image);
 
-	bitmap_image image("../dataset/ssnpodpisyrecznie/_skany/AndrzejJanota02.bmp");
-	bitmap_image image2("../dataset/ssnpodpisyrecznie/_skany/AndrzejJanota02.bmp");
+	waitKey(0);
 
-	if (!image || !image2)
-		std::cerr << "Nie udalo sie zaladowac pliku: " << std::endl;
+	return 0;
 }

@@ -2,7 +2,6 @@
 #define CONVERSION_H_
 
 #include "IConversion.h"
-#include "bitmap_image.hpp"
 
 #include <string>
 
