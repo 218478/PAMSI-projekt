@@ -4,58 +4,67 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <stdexcept>
+#include <bitset>
 
-int ReadMNIST::ReverseInt(int i) {
-	unsigned char c1, c2, c3, c4;
+uint32_t ReadMNIST::ReverseInt(uint32_t i) {
+	// unsigned char temp[4];
+	// int result = 0;
+	// temp[0] = (i & 0xff000000) >> 24;
+	// temp[1] = (i & 0x00ff0000) >> 8;
+	// temp[2] = (i & 0x0000ff00) << 8;
+	// temp[3] = (i & 0x000000ff) << 24;
 
-	c1 = i & 255;
-	c2 = (i >> 8) & 255;
-	c3 = (i >> 16) & 255;
-	c4 = (i >> 24) & 255;
+	// result = temp[0] | temp[1]  | temp[2]  | temp[3];
+	uint32_t swapped;
+	swapped = ((i>>24)&0xff) | // move byte 3 to byte 0
+				((i<<8)&0xff0000) | // move byte 1 to byte 2
+				((i>>8)&0xff00) | // move byte 2 to byte 1
+				((i<<24)&0xff000000); // byte 0 to byte 3
 
-	return ((int)c1 << 24) + ((int)c2 << 16) + ((int)c3 << 8) + c4;
+	return swapped;
+
+	// uint8_t lolo = (i >> 0) & 0xFF;
+	// uint8_t lohi = (i >> 8) & 0xFF;
+	// uint8_t hilo = (i >> 16) & 0xFF;
+	// uint8_t hihi = (i >> 24) & 0xFF;
+
+	// uint32_t value = (hihi << 24)
+ //               | (hilo << 16)
+ //               | (lohi << 8)
+ //               | (lolo << 0);
+
+	// return value;
+
+
 }
 
-std::vector<int> ReadMNIST::Read(std::string filename) {
+std::vector<char> ReadMNIST::Read(const std::string& path_to_file) {
+	int temphaha = 7;
+	std::bitset<32> a(temphaha);
+	std::cout << "Przed zamiana: " << temphaha << std::endl;
+	std::bitset<32> b(ReverseInt(temphaha));
+	std::cout << "Po zamianie: " << ReverseInt(temphaha) << std::endl;
+	std::ifstream input( path_to_file.c_str(), std::ios::binary );
 
-	// // My old code
-	// std::fstream file(filename.c_str(), std::ios::in);
+	if (input.fail())
+		throw std::runtime_error("Blad przy wczytywaniu pliku: "+ path_to_file);
 
-	// std::cout << file << std::endl;
+	if (input.is_open()) {
+	// // copies all data into buffer
+	// 	std::vector<char> buffer((
+	// 		std::istreambuf_iterator<char>(input)),
+	// 	(std::istreambuf_iterator<char>()));
+					std::vector<char> buffer;
+		buffer.reserve(60000);  // size of training set
+		char temp;
 
-	// if (std::ios::failbit == true)
-	// 	std::cerr << "Blad przy wczytywaniu pliku: " << filename << std::endl;
-	//____________________________________________________________________
 
-	file.open(filename.c_str());
-	if (std::ios::failbit == true)
-		std::cerr << "Blad przy wczytywaniu pliku: " << filename << std::endl;
-	if (file.is_open())
-	{
-		int magic_number=0;
-		int number_of_images=0;
-		int n_rows=0;
-		int n_cols=0;
-		file.read((char*)&magic_number,sizeof(magic_number));
-		magic_number= ReverseInt(magic_number);
-		file.read((char*)&number_of_images,sizeof(number_of_images));
-		number_of_images= ReverseInt(number_of_images);
-		file.read((char*)&n_rows,sizeof(n_rows));
-		n_rows= ReverseInt(n_rows);
-		file.read((char*)&n_cols,sizeof(n_cols));
-		n_cols= ReverseInt(n_cols);
-		for(int i=0;i<number_of_images;++i)
-		{
-			for(int r=0;r<n_rows;++r)
-			{
-				for(int c=0;c<n_cols;++c)
-				{
-					unsigned char temp=0;
-					file.read((char*)&temp,sizeof(temp));
-
-				}
-			}
-		}
+		input >> temp;
+		buffer.push_back(temp);
+		return buffer;
+	} else {
+		throw std::runtime_error("Plik: " + path_to_file + " nie jest otwarty.");
+		return {};
 	}
-
 }
