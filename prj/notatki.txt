@@ -4,3 +4,25 @@ http://ai.stanford.edu/~btaskar/ocr/
 folder dataset (pliki letter.data i letter.names)
 
 Dane sa w formacie tekstowym i reprezentuja obraz w formacie 16x8 pixeli. Litery male i w formacie rastrowym
+_____________________________________________________
+Jak widzę tę sieć?
+
+Musi mieć 128 wejść (bo 16x8 pixeli),
+spróbujmy na teraz zrobić tylko jedną warstwę ukrytą
+i 26 wyjść (bo tyle jest liter w alfabecie angielskim)
+
+wg strony: http://www.ai.c-labtech.net/sn/pod_prakt.html
+
+powinnismy miec tyle neuronow w warstwie ukrytej:
+sqrt(n_we*n_wy) = 57,688820407 ~ 58 neuronów
+
+chociaż dla tego Pana wystarczyło już 8 neuronów, żeby to fajnie śmigało
+
+Funkcja aktywacji oczywiście sigmoidalna [ 1/(1+e^-neuron_wyjsciowy[i][j]) ]
+
+
+korzystamy z macierzy z biblioteki <armadillo> bo jest dobrze wspierana i zawiera podstawowe operacje na macierzach.
+
+do wykresów gnuplot (pomoże nam dobrać parametry do uczenia -> alfa, beta i eta)
+
+Musimy też ustalić próg błędu (threshold). Jest to coś takiego co będzie porownywane z funkcja bledu (cost function) i jezeli funkcja bedzie od niego mniejsza, to wtedy nasza siec sie juz wystarczajaco nauczyla.
