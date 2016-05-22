@@ -1,15 +1,16 @@
 CXXFLAGS = -Iinc -Wall -pedantic -g -std=c++11
 CC = g++
+FILEPATH = ../dataset/letter.data
 
-SOURCES = src/main.cpp src/ReadMNIST.cpp
+SOURCES = src/main.cpp src/Reader.cpp src/Letter.cpp
 
-HEADERS = inc/ReadMNIST.h
+HEADERS = inc/Reader.h inc/Letter.h
 
 OBJECTS = $(subst src/,obj/,$(subst .cpp,.o,$(SOURCES)))
 EXECUTABLE = program
 
 __start__: $(EXECUTABLE)
-				./$(EXECUTABLE)
+				./$(EXECUTABLE) $(FILEPATH)
 
 all: executable
 

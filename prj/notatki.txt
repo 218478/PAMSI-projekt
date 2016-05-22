@@ -1,0 +1,6 @@
+Poniewaz mamy skupic sie na tekscie, chce oprzec baze danych o te, ktora mozna znalezc tutaj:
+http://ai.stanford.edu/~btaskar/ocr/
+
+folder dataset (pliki letter.data i letter.names)
+
+Dane sa w formacie tekstowym i reprezentuja obraz w formacie 16x8 pixeli. Litery male i w formacie rastrowym

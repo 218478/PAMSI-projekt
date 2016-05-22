@@ -1,18 +1,20 @@
-#ifndef READ_MNIST_H
-#define READ_MNIST_H
+#ifndef READER_H
+#define READER_H
 
 #include <string>
 #include <fstream>
 #include <vector>
 
-class ReadMNIST {
+#include "Letter.h"
+
+class Reader {
 private:
 	/*! \brief Odwraca magiczne cyfry.
 	*
 	* \details	Poniewaz MNIST jest napisany w big-endian nalezy odwrocic
 	*			kolejnosc bitow, bo procesory Intela  to architektura Little Endian.
 	*/
-	uint32_t ReverseInt (uint32_t i);
+	int ReverseInt (int i);
 
 public:
 	/*! \brief	Wczytuje zawartosc pliku MNIST i zwraca ja w formie vectora.
@@ -20,7 +22,13 @@ public:
 	* \details	Korzysta z metody ReverseInt(). Wektor korzysta z char, poniewaz
 	*			tak domyslnie czyta sie pliki binarne.
 	*/
-	std::vector<char> Read(const std::string& path_to_file);
+	std::vector<int> ReadDigits(const std::string& path_to_file);
+
+	/*! \brief	Wczytuje zawartosc pliku letter.data.
+	*
+	* \details Poniewaz mamy zajac sie literami.
+	*/
+	std::vector<Letter> ReadLetters(const std::string& path_to_file);
 };
 
-#endif  // READ_MNIST_H
+#endif  // READER_H
