@@ -17,19 +17,19 @@ int Reader::ReverseInt(int i) {
 				return swapped;
 			}
 
-			std::vector<int> Reader::ReadDigits(const std::string& path_to_file) {
-				std::ifstream input( path_to_file.c_str(), std::ios::binary );
+	std::vector<int> Reader::ReadDigits(const std::string& path_to_file) {
+		std::ifstream input( path_to_file.c_str(), std::ios::binary );
 
-				if (input.fail())
-					throw std::runtime_error("Blad przy wczytywaniu pliku: "+ path_to_file);
+		if (input.fail())
+			throw std::runtime_error("Blad przy wczytywaniu pliku: "+ path_to_file);
 
-				if (input.is_open()) {
-					std::vector<int> buffer;
-		buffer.reserve(60000);  // size of training set
-		unsigned char temp;
-		while (input >> temp) {
-			input >> temp;
-			std::cout << temp;
+		if (input.is_open()) {
+			std::vector<int> buffer;
+			buffer.reserve(60000);  // size of training set
+			unsigned char temp;
+			while (input >> temp) {
+				input >> temp;
+				std::cout << temp;
 		}
 
 		buffer.push_back(ReverseInt(temp));
@@ -65,4 +65,4 @@ std::vector<Letter> Reader::ReadLetters(const std::string& path_to_file) {
 	}
 
 	return collected;
-	}
+}

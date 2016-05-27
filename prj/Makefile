@@ -27,11 +27,11 @@ obj/%.o: src/%.cpp $(HEADERS) obj
 
 clean:
 				rm -rf $(OBJECTS) $(EXECUTABLE) unit_test
-				
+
 test: unit_test
 				./unit_test
 
-unit_test: src/unit_test.cpp inc/catch.hpp
+unit_test: src/unit_test.cpp inc/catch.hpp $(HEADERS)
 				$(CC) $(CXXFLAGS) -o unit_test src/unit_test.cpp
 
 order:
@@ -39,8 +39,9 @@ order:
 
 help:
 				@echo
-				@echo " make            - tworzenie i uruchomienie aplikacji"
-				@echo " make clean  - usuniecie produktow kompilacji i konsolidacji"
-				@echo " make order  - usuwa zbedne pliki tymczasowe z koncowka \"~\""
-				@echo " make help    - wyswietla niniejsza informacje"
+				@echo "\tmake\t\t- tworzenie i uruchomienie aplikacji"
+				@echo "\tmake test\t- przeprowadza testy jednostkowe aplikacji"
+				@echo "\tmake clean\t- usuniecie produktow kompilacji i konsolidacji"
+				@echo "\tmake order\t- usuwa zbedne pliki tymczasowe z koncowka \"~\""
+				@echo "\tmake help\t- wyswietla niniejsza informacje"
 				@echo

@@ -5,6 +5,7 @@
 
 #include "Reader.h"
 #include "Letter.h"
+#include "NeuralNetwork.h"
 
 int main(int argc, char **argv) {
 	if (argc < 2)
@@ -20,6 +21,13 @@ int main(int argc, char **argv) {
 			temp = reader.ReadLetters(std::string(argv[1]));
 
 			std::cout << "Wczytano: " << temp.size() << " liter" << std::endl;
+
+			NeuralNetwork siec(8);
+			std::cout << "Ilosc polaczen: " << siec.HiddenLayerConnectionNumber()
+				<< std::endl;
+
+			// eksperymentujemy na literce 'o'
+			siec.Learn(temp[0]);
 		}
 		catch (std::runtime_error& msg) {
 			std::cerr << msg.what() << std::endl;

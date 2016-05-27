@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"arg",
+				"argc"
+			],
+			[
+				"co",
+				"columnds"
+			],
+			[
+				"Re",
+				"ReverseInt"
+			],
+			[
+				"uint",
+				"uint32_t"
+			],
+			[
+				"n",
+				"n_cols"
+			],
+			[
+				"Rea",
+				"ReadMNIST"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
 				"branch",
 				"BranchBoundExtendedListTest"
 			],
@@ -91,23 +119,48 @@
 			"file": "src/main.cpp",
 			"settings":
 			{
-				"buffer_size": 768,
+				"buffer_size": 756,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "inc/Conversion.h",
+			"file": "notatki.txt",
 			"settings":
 			{
-				"buffer_size": 168,
+				"buffer_size": 1279,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "inc/IConversion.h",
+			"file": "Makefile",
 			"settings":
 			{
-				"buffer_size": 98,
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/Reader.h",
+			"settings":
+			{
+				"buffer_size": 815,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/Letter.h",
+			"settings":
+			{
+				"buffer_size": 1633,
+				"line_ending": "Unix",
+				"name": "#ifndef LETTER_H_"
+			}
+		},
+		{
+			"file": "src/Reader.cpp",
+			"settings":
+			{
+				"buffer_size": 1645,
 				"line_ending": "Unix"
 			}
 		}
@@ -119,10 +172,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 264.0,
-		"last_filter": "git pus",
+		"height": 96.0,
+		"last_filter": "git push",
 		"selected_items":
 		[
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
 			[
 				"git pus",
 				"Git: Push"
@@ -132,20 +197,8 @@
 				"Git: Commit"
 			],
 			[
-				"git add",
-				"Git: Add..."
-			],
-			[
-				"git com",
-				"Git: Commit"
-			],
-			[
 				"git ad",
 				"Git: Add..."
-			],
-			[
-				"git push",
-				"Git: Push"
 			],
 			[
 				"make cl",
@@ -230,13 +283,21 @@
 	],
 	"file_history":
 	[
-		"/home/kkuczaj/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/kkuczaj/PAMSI-projekt/prj/CMakeLists.txt",
+		"/home/kkuczaj/PAMSI-projekt/prj/src/Letter.cpp",
+		"/home/kkuczaj/PAMSI-projekt/prj/notatki.txt",
+		"/home/kkuczaj/PAMSI-projekt/prj/inc/Conversion.h",
+		"/home/kkuczaj/Programs/neural2d/src/neural2d-core.cpp",
 		"/home/kkuczaj/PAMSI-projekt/prj/Makefile",
+		"/home/kkuczaj/PAMSI-projekt/prj/inc/IReadMNIST.h",
+		"/home/kkuczaj/Programs/neural2d/src/imageReaderBMP.cpp",
+		"/home/kkuczaj/PAMSI-projekt/prj/src/ReadMNIST.cpp",
+		"/home/kkuczaj/PAMSI-projekt/prj/src/Conversion.cpp",
+		"/home/kkuczaj/PAMSI-projekt/prj/CMakeLists.txt",
+		"/home/kkuczaj/PAMSI-projekt/prj/inc/IConversion.h",
+		"/home/kkuczaj/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/kkuczaj/PAMSI-projekt/prj/inc/test.cpp",
 		"/home/kkuczaj/PAMSI-projekt/prj/inc/CImg.h",
 		"/home/kkuczaj/PAMSI-projekt/prj/src/CImg.cpp",
-		"/home/kkuczaj/PAMSI-projekt/prj/src/Conversion.cpp",
 		"/home/kkuczaj/PAMSI-projekt/prj/inc/bitmap_image.hpp",
 		"/home/kkuczaj/PAMSI-projekt/prj/inc/IReadBMP.h",
 		"/home/kkuczaj/PAMSI-projekt/prj/inc/ReadBMP.h",
@@ -307,6 +368,17 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"REader",
+			"ReadMNIST",
+			"READ_MNIST_H",
+			"ReadMNIST",
+			"num",
+			"inputi",
+			"value",
+			"file",
+			"filename",
+			"temp",
+			"reverse",
 			"bitmap_image",
 			"ReadBMP",
 			"IREAD_BMP_H",
@@ -343,6 +415,15 @@
 		"regex": false,
 		"replace_history":
 		[
+			"Reader",
+			"REader",
+			"READER_H",
+			"Reader",
+			"i",
+			"inputi",
+			"input",
+			"path_to_file",
+			"Reverse",
 			"Conversion",
 			"ICONVERSION_H_",
 			"CONVERSION_H_",
@@ -368,13 +449,13 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -383,15 +464,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 768,
+						"buffer_size": 756,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								378,
-								378
+								669,
+								669
 							]
 						],
 						"settings":
@@ -404,30 +485,86 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 1,
-					"file": "inc/Conversion.h",
+					"file": "notatki.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 168,
+						"buffer_size": 1279,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								168,
-								168
+								1278,
+								1278
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "inc/Reader.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 815,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								815,
+								815
 							]
 						],
 						"settings":
@@ -439,24 +576,53 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "inc/IConversion.h",
+					"buffer": 4,
+					"file": "inc/Letter.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 98,
+						"buffer_size": 1633,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								68,
-								68
+								1140,
+								1140
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#ifndef LETTER_H_",
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 153.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/Reader.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1645,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								814,
+								814
 							]
 						],
 						"settings":
@@ -465,7 +631,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 612.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
