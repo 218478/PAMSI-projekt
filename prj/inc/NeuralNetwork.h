@@ -1,0 +1,6 @@
+#ifndef NERUAL_NETWORK_H
+#define NERUAL_NETWORK_H
+
+
+
+#endif  // NERUAL_NETWORK_H
