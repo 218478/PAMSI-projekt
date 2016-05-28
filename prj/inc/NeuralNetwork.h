@@ -34,10 +34,6 @@ private:
 	*/
 	Output out;
 
-	/*! \brief	Bledy na wyjsciu.
-	*/
-	Output errors;
-
 	// parametry sieci neuronowej.
 	double alpha, beta, eta;
 
@@ -90,10 +86,8 @@ public:
 
 		// reserve memory for output layer
 		out.resize(26);  // bo tyle jest liter
-		errors.resize(26);
 		for (auto &a: out) {
 			a.resize(hidden_nuerons_number);
-			errors.resize(hidden_nuerons_number);
 		}
 
 		for (auto &i: out)
@@ -110,8 +104,11 @@ public:
 	*			wstecznej. Funkcja aktywacji to sigmoida.
 	*/
 	void Learn(const Letter& l) {
-		std::vector<double> signal1(8);
-		std::vector<double> signal2(26);
+		std::vector<double> signal1(8);  // wypelniane sa zerami
+		std::vector<double> signal2(26), errors(26), should_be(26), blad(26);
+
+		should_be[l.GetLetter()] = 1;
+
 		// pojedyncze przetworzenie pierwszej warstwy
 		for (int i = 0; i < layer.size(); i++) {
 			for (int j = 0; j < rows; j++) {
@@ -129,8 +126,15 @@ public:
 		}
 
 		Sigmoid(signal2);
+		int sum = 0;
+		// obliczanie sygnalu bledu na wyjsciu
+		for (int i = 0; i < 26; i++) {
+			errors[i] = should_be[i] - signal2[i];
+			sum += errors[i];
+			blad[i] = ((signal2[i] - should_be[i])*(signal2[i] - should_be[i]))/2;
+		}
 
-
+		std::cout << sum << std::endl;
 	}
 
 	/*! \brief	Podaje ile polaczen wystepuje w sieci ukrytej z wejsciem.

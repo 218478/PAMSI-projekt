@@ -19,6 +19,8 @@ int main(int argc, char **argv) {
 			// for (auto it = temp.begin(); it != temp.end(); it++)
 			// 	std::cout << *it << std::endl;
 			temp = reader.ReadLetters(std::string(argv[1]));
+			for (auto &i: temp)
+				i.ToNeural2dFile();
 
 			std::cout << "Wczytano: " << temp.size() << " liter" << std::endl;
 

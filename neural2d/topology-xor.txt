@@ -1,0 +1,7 @@
+# This is one possible neural net topology that works
+# for solving the demo digits training set:
+
+input size 2
+layer1 size 2 from input
+output size 1 from layer1
+

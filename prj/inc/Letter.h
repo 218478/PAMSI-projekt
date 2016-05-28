@@ -2,7 +2,11 @@
 #define LETTER_H_
 
 #include <vector>
+#include <fstream>
 #include <iostream>
+#include <stdexcept>
+#include <string>
+#include <cstdlib>
 
 const int rows = 16;
 const int columns = 8;
@@ -41,9 +45,9 @@ public:
 	}
 
 	// gettery, aby zapewnic klasie hermetycznosc
-	int GetId() { return id; }
-	char GetLetter() { return whatLetter; }
-	std::vector< std::vector<int> > Get() { return letter; }
+	int GetId() const { return id; }
+	char GetLetter() const { return whatLetter - 97; }
+	std::vector< std::vector<int> > Get() const { return letter; }
 	void clear() { letter.clear(); }
 
 	/*! \brief		Przeciazenie operatora [].
@@ -52,6 +56,31 @@ public:
 	*			nueronowa.
 	*/
 	std::vector<int> operator [] (int n) const { return letter[n]; }
+
+	void ToNeural2dFile() {
+		std::string name("/home/kkuczaj/PAMSI-projekt/neural2d/myInputData.txt");
+		std::ofstream file(name.c_str(), std::fstream::app | std::fstream::out);
+		Letter temp = *this;
+		if (file.is_open()) {
+			file << "{ ";
+			for (int i = 0; i < rows; i++) {
+				for (int j = 0; j < columns; j++) {
+					file << temp[i][j] << " ";
+				}
+			}
+			file << " } ";
+			std::vector<int> output(26,-1);
+			output[GetLetter()] = 1;
+			for (auto &i: output)
+				file << i << " ";
+
+			file << std::endl;
+		}
+		else
+			throw std::runtime_error("Can't open a file: " + name);
+
+
+	}
 
 	// przeciazenia operatorw wyjscia i wejscia (ulatwia debug i prace)
 	friend std::istream& operator >> (std::istream& in, Letter& l);

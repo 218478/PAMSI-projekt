@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/neural2d.dir/src/neural2d.cpp.o  -o neural2d -rdynamic libneural2d-core.a 

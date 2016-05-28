@@ -1,0 +1,5 @@
+/home/kkuczaj/PAMSI-projekt/neural2d/CMakeFiles/neural2d.dir
+/home/kkuczaj/PAMSI-projekt/neural2d/CMakeFiles/neural2d-core.dir
+/home/kkuczaj/PAMSI-projekt/neural2d/CMakeFiles/test.dir
+/home/kkuczaj/PAMSI-projekt/neural2d/CMakeFiles/test-xor.dir
+/home/kkuczaj/PAMSI-projekt/neural2d/CMakeFiles/unitTest.dir
