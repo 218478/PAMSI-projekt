@@ -4,7 +4,8 @@
 #include <fstream>
 #include <vector>
 #include <stdexcept>  // for std::runtime_error
-#include <cstdlib>  // for pseudorandomness
+#include <cstdlib>  	// for pseudorandomness
+#include <cmath>  	// for sigmoid function
 
 #include "Letter.h"
 
@@ -32,6 +33,23 @@ private:
 	* \details	Zawiera wyjscia neuronow.
 	*/
 	Output out;
+
+	/*! \brief	Bledy na wyjsciu.
+	*/
+	Output errors;
+
+	// parametry sieci neuronowej.
+	double alpha, beta, eta;
+
+	/*! \brief	Funkcja aktywacji.
+	*
+	* \details	Przerabia wektor podany jako argument funkcji. Dziala na
+	*			referencji.
+	*/
+	void Sigmoid (std::vector<double> &wektor) {
+		for (auto& i: wektor)
+			i = 1.0 / (1.0 + exp(beta * (-i)));
+	}
 public:
 	/*! \brief	Konstuktor bezparametryczny.
 	*
@@ -50,6 +68,8 @@ public:
 	*			losowy przydzial wag neuronow.
 	*/
 	NeuralNetwork(int hidden_nuerons_number) {
+		alpha = beta = eta = 1.0;  // ustawienie parametrow sieci
+
 		layer.resize(hidden_nuerons_number);  // zarezerwuj pamiec dla n neuronow
 		for (auto &i: layer) {
 			i.resize(rows);  // zarezerwuj pamiec dla kolumn macierzy Liter
@@ -61,21 +81,56 @@ public:
 		for (auto &i: layer) {
 			for (auto &j: i) {
 				for (auto &k: j) {
-					k = (((rand() % 1000000L) / 1700.0) - 9.8)*0.0015;
+					k = (((rand() % 1000000L) / 1700.0) - 9.8)*0.0015;  // jak w necie
 					if (k == 0)
 						k = 0.01492;
 				}
 			}
 		}
+
+		// reserve memory for output layer
+		out.resize(26);  // bo tyle jest liter
+		errors.resize(26);
+		for (auto &a: out) {
+			a.resize(hidden_nuerons_number);
+			errors.resize(hidden_nuerons_number);
+		}
+
+		for (auto &i: out)
+			for (auto &j: i) {
+				j = (((rand() % 1000000L) / 1700.0) - 9.8)*0.0015;  // jak w necie
+				if (j == 0)
+					j = 0.01492;
+			}
 	}
 
 	/*! \brief	Uczenie sieci neuronowej.
 	*
 	* \details	Tutaj nastepuje zmian wag sieci ukrytej metoda propagacji
-	*			wstecznej.
+	*			wstecznej. Funkcja aktywacji to sigmoida.
 	*/
 	void Learn(const Letter& l) {
-		std::cout << l << "\n" << l[3][1] << std::endl;
+		std::vector<double> signal1(8);
+		std::vector<double> signal2(26);
+		// pojedyncze przetworzenie pierwszej warstwy
+		for (int i = 0; i < layer.size(); i++) {
+			for (int j = 0; j < rows; j++) {
+				for (int k = 0; k < columns; k++) {
+					signal1[i] += layer[i][j][k]*l[j][k];
+				}
+			}
+		}
+
+		Sigmoid(signal1);
+
+		for (int i = 0; i < out.size(); i++) {
+			for (int j = 0; j < signal1.size(); j++)
+				signal2[i] += out[i][j]*signal1[j];
+		}
+
+		Sigmoid(signal2);
+
+
 	}
 
 	/*! \brief	Podaje ile polaczen wystepuje w sieci ukrytej z wejsciem.
@@ -91,9 +146,10 @@ public:
 		return size;
 	}
 
-	/*! \brief Zwraca litere jaka rozpoznal.
+	/*! \brief	Zwraca litere jaka rozpoznal.
 	*
-	*  \details LItetra 'a' jest w kodzie ascii 98 znakiem z kolei.
+	*  \details	LItera 'a' jest w kodzie ascii 98 znakiem z kolei. Metoda
+	*			powinna byc wywolywana po nauczeniu siecie metoda Learn().
 	*/
 	char Result(const Letter& l) {
 		return {};

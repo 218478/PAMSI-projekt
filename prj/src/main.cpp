@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
 
 			std::cout << "Wczytano: " << temp.size() << " liter" << std::endl;
 
-			NeuralNetwork siec(8);
+			NeuralNetwork siec(2);
 			std::cout << "Ilosc polaczen: " << siec.HiddenLayerConnectionNumber()
 				<< std::endl;
 
