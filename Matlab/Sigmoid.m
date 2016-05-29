@@ -3,6 +3,5 @@ function output = Sigmoid( input )
 %   Detailed explanation goes here
     beta = 1.0;
     output = 1/(1+exp(beta*(-input)));
-
 end
 

@@ -1,24 +1,16 @@
 % % Simple three layer neural network
 % clear;
+% %---------------------------------------
 % 
-% fileID = fopen('letter.data');
-% 
-% each_cell = textread('letter.names','%s','delimiter',' ');
-% 
-% data = reshape(textread('letter.data','%s'),134,52152)';
-% 
-% letters = data(:,2);
-% image_matrix = data(:,7:134);
-
+Read();
 
 % w ten sposob czytac kazdy wiersz
 % first = reshape(image_matrix(1,:),8,16)'
 
-layer_count = 3;
 
-Sigmoid(0);
+neuron_count = [128,8,26];
+RandomWeightsGeneration(neuron_count);
+% Process(neuron_count);
 
-for i=1:layer_count
-    
-end
-
+shorter_data_image = image_matrix(1:100,:);
+shorter_data_letters = letters(1:100,:);
